@@ -21,18 +21,21 @@ function submission(event){
     let a, b, c;
 
     //name--Error--Checking
-   let name = document.getElementById('name').value;
-   let nameErr = document.getElementById('nameErr');
-   if(name.length === 0){
-       nameErr.innerHTML = 'You Forgot To Enter Your Name';
+    let name = document.getElementById('name').value;
+    let nameErr = document.getElementById('nameErr');
+    let nameRegex = /^[a-zA-Z]+$/;
+    
+    if (name.length === 0) {
+        nameErr.innerHTML = 'You Forgot To Enter Your Name';
         nameErr.style.color = 'red';
-    }else if(!name.includes(' ')){
-        nameErr.innerHTML = 'Plese Enter Your Full Name';
+    } else if (!nameRegex.test(name)) {
+        nameErr.innerHTML = 'Please Enter Your Full Name using only letters';
         nameErr.style.color = 'yellow';
-    }else{
+    } else {
         nameErr.innerHTML = '';
         a = true;
     }
+    
 
     //email-Error-Checking
     let email = document.getElementById('email').value;
@@ -70,7 +73,6 @@ function submission(event){
 
 // form--submission
 function submitForm(){
-    // e.preventDefault();
     $.ajax({
         url: "https://script.google.com/macros/s/AKfycbzgaGjDG2mL5DHb_DSZ8LQmpcAyMBvtEvY8EZECmKFxf7EVJlzYymwMAFC2OmiS5R-ZTg/exec",
         data: $("#submit-form").serialize(),
