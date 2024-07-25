@@ -18,7 +18,7 @@ function toggleMenu(){
 
 function submission(event){
     event.preventDefault();
-    let a, b, c;
+    let nameTrue, emailTrue, msgTrue;
 
     //name--Error--Checking
     let name = document.getElementById('name').value;
@@ -33,7 +33,7 @@ function submission(event){
         nameErr.style.color = 'yellow';
     } else {
         nameErr.innerHTML = '';
-        a = true;
+        nameTrue = true;
     }
     
 
@@ -48,7 +48,7 @@ function submission(event){
         emailErr.style.color = 'yellow';
     }else {
         emailErr.innerHTML = '';
-         b = true;
+         emailTrue = true;
     }
 
     //msg--Error--Checkiing
@@ -62,10 +62,10 @@ function submission(event){
         msgErr.style.color = 'yellow'
     }else{
         msgErr.innerHTML = "";
-        c = true;
+        msgTrue = true;
     }
 
-    if(a & b & c){
+    if(nameTrue & emailTrue & msgTrue){
         submitForm();
     }
 }

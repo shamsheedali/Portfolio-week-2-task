@@ -12,12 +12,13 @@ section{
 .banner{
     position: relative;
     min-height: 100vh;
-    background: url(images/tim-marshall-K2u71wv2eI4-unsplash.jpg);
+    background: black;
     background-size: cover;
     background-position: right;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    text-align: center;
 }
 .banner h2{
     font-size: 3em;
